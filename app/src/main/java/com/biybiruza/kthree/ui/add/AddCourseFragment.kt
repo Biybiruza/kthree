@@ -24,10 +24,10 @@ class AddCourseFragment : Fragment(R.layout.fragment_add_course) {
 
         binding.apply {
             send.setOnClickListener {
-                val models: MutableList<Post> = ArrayList<Post>()
+                val models: MutableList<Post> = arrayListOf()
 
-                if (mySharedReport.getList("key", Post::class.java) != null) {
-                    models.addAll(mySharedReport.getList("key", Post::class.java))
+                if (mySharedReport.getList("post", Post::class.java) != null) {
+                    models.addAll(mySharedReport.getList("post", Post::class.java))
                 }
                 models.add(Post(etLocation.text.toString(),etDescription.text.toString()))
                 mySharedReport.putList("post",models)
